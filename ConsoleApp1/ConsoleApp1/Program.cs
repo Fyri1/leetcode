@@ -4,9 +4,10 @@ public class Solution
 {
     static void Main(string[] args)
     {
-
-        Console.WriteLine(RomanToInt("III"));
-
+        Console.WriteLine("Num II : " + RomanToInt("II"));
+        Console.WriteLine("Num III : " + RomanToInt("III"));
+        Console.WriteLine("Num LVIII : " + RomanToInt("LVIII"));
+        Console.WriteLine("Num MCMXCIV : " + RomanToInt("MCMXCIV"));
     }
 
 
@@ -31,8 +32,10 @@ public class Solution
         {
             char currentRomanChar = S[i];
             romanNumbersDictionary.TryGetValue(currentRomanChar, out int num);
+            /*TryGetValue its method for using dictionary */
+            /*With the help it I compare an array element and search by key*/
 
-            if (i + 1 < S.Length && romanNumbersDictionary[s[i + 1]] > romanNumbersDictionary[currentRomanChar])
+            if (i + 1 < S.Length && romanNumbersDictionary[S[i + 1]] > romanNumbersDictionary[currentRomanChar])
             {
                 sum -= num;
             }
@@ -49,49 +52,9 @@ public class Solution
 
     }
 
-        /*        foreach (char c in S)
-                {
-                    int i = 0;
-
-                    if (c == 'I')
-                    {
-                        nums[i] = 1;
-                        i++;
-                    }
-
-                    else if(c == 'V')
-                    {
-                        nums[i] = 5;
-                        i++;
-                    }*/
-
-        /*            if (c > c + 1)
-                    {
-                        result = result +c;
-                    }
-                    else if (c==c+1)
-                    {
-                        result = result + c;
-                    }
-                    else if(c < c + 1)
-                    {
-                        int a = c + 1;
-                        int b = c;
-                        int g = a - b;
-
-                        result = result + g;
 
 
-                    }*/
-
-
-
-
-
-
-        return result;
-    }
-
-    
 };
+
+   
 
